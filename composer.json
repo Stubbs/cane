@@ -1,0 +1,15 @@
+{
+    "name": "stubbs/cane",
+    "description": "Library to interface with SugarCRM's REST interface",
+    "keywords": "sugarcrm sugar",
+    "authors": [
+        {
+            "name": "Stuart Grimshaw",
+            "email": "stuart.grimshaw@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-o": { "Stubbs\\": "src" }
+    }
+}
