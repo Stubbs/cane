@@ -14,7 +14,7 @@ namespace Stubbs\Sugar;
  *
  * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
  **/
-class Sugar
+class SugarAPI
 {
     /**
      * @var string The base URI to use for the API.
