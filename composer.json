@@ -1,17 +1,24 @@
 {
-    "name": "stubbs/cane",
-    "description": "Library to interface with SugarCRM's REST interface",
-    "keywords": "sugarcrm sugar",
-    "version": "0.0.0.1-dev",
-    "minimum-stability": "dev",
-    "authors": [
-        {
-            "name": "Stuart Grimshaw",
-            "email": "stuart.grimshaw@gmail.com"
-        }
-    ],
-    "license": "MIT",
-    "autoload": {
-        "psr-0": { "Stubbs\\": "src" }
+  "name": "stubbs/cane",
+  "type": "library",
+  "description": "Library to interface with SugarCRM's REST interface",
+  "keywords": ["sugarcrm", "sugar", "rest", "api"],
+  "homepage": "http://www.github.com/stubbs",
+  "version": "0.0.0.1-dev",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Stuart Grimshaw",
+      "email": "stuart.grimshaw@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-0": {
+      "Stubbs\\": "src"
+    }
+  }
 }
