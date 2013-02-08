@@ -9,6 +9,8 @@ namespace Stubbs\Sugar;
 /**
  * Represents a SugarCRM Contact.
  *
+ * The field names in these classes reflect what they are called in the API.
+ *
  * @package default
  * @author 
  **/
