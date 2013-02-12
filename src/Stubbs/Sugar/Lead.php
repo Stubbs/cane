@@ -325,4 +325,15 @@ class Lead
      * @var string $opportunity_amount The amount of this opportunity.
      */
     private $opportunity_amount;
+
+    /**
+     * Returns a JSON string that represents this object.
+     *
+     * @return string
+     * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
+     **/
+    public function toArray()
+    {
+        return array_filter((array) $this);
+    }
 } // END class Contact
