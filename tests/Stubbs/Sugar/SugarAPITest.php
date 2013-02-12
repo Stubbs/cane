@@ -7,7 +7,8 @@
 namespace Stubbs\Sugar\SugarAPI\Tests;
 
 use Stubbs\Sugar\SugarAPI,
-    Stubbs\Sugar\Contact;
+    Stubbs\Sugar\Contact,
+    Stubbs\Sugar\Lead;
 
 class SugarApiTest extends \PHPUnit_Framework_TestCase
 {
@@ -325,7 +326,8 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Stubbs\Sugar\SugarAPI::createContact
      */
-    public function testCreateContactCreated() {
+    public function testCreateContactCallsTransport() {
+        $this->markTestIncomplete('Not yet Implemented');
         $objContact = new Contact();
 
         // Simple test, only the last name is required to make a valid contact.
@@ -334,9 +336,31 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Stubbs\Sugar\SugarAPI::createContact
+     * @covers Stubbs\Sugar\SugarAPI::setEntry
+     * @covers Stubbs\Sugar\SugarAPI::createLead
      */
-    public function testCreateLead() {
-      
+    public function testSetEntryCallsTransport() {
+        $this->objTransport->expects($this->once())
+             ->method('call')
+             ->with($this->equalTo("set_entry"),
+                    $this->equalTo(array(
+                        "module" => "Leads",
+                        "name_value_list" => array(
+                            "first_name" => "Stuart", "last_name" => "Grimshaw", "full_name" => "Stuart Grimshaw")
+                        )
+                    )
+                )
+                ->will($this->returnValue(array("id" => "123xyz")));
+
+        $objLead = new Lead();
+
+        $objLead->first_name = "Stuart";
+        $objLead->last_name = "Grimshaw";
+        $objLead->full_name = "Stuart Grimshaw";
+
+        $objAPI = new SugarAPI($this->objTransport);
+
+        $this->assertEquals($objAPI->createLead($objLead), "123xyz");
     }
+
 }

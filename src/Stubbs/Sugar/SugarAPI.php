@@ -9,7 +9,7 @@
 namespace Stubbs\Sugar;
 
 use UnexpectedValueException;
-use Contact;
+use Stubbs\Sugar\Lead;
 
 /**
  * Sugar provides conveinience methods for updating and reading data from a SugarCRM
@@ -78,17 +78,34 @@ class SugarAPI
         return $objResponse->module_fields;
     }
 
+    /**
+     * Call the set entry method on the API.
+     *
+     * @return string The ID of the entry that was written.
+     * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
+     **/
+    protected function setEntry($arrCallParameters)
+    {
+        $arrResult = $this->objTransport->call("set_entry", $arrCallParameters);
+
+        return $arrResult['id'];
+    }
 
     /**
-     * Create a new contact.
+     * Create a new Lead.
      *
      * @return bool
      * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
      **/
-    public function createContact(Contact $objContact)
+    public function createLead(Lead $objLead)
     {
-        $strJSON = $objContact->getJSON();
+        $arrCallParameters = array(
+                "module" => "Leads",
+                "name_value_list" => $objLead->toArray()
+            );
 
-print($strJSON);
+        $strID = $this->setEntry($arrCallParameters);
+
+        return $strID;
     }
 } // END class Sugar
