@@ -1,6 +1,9 @@
 # Cane
 ## A PHP Libary for the SugarCRM REST Interface
 
+[![Build Status](https://travis-ci.org/Stubbs/cane.png)](https://travis-ci.org/Stubbs/cane)
+
+
 ### Installation
 
 Install Cane with composer:
