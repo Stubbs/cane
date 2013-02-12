@@ -19,310 +19,310 @@ class Lead
     /**
      * @var integer Unique identifier for this contact.
      **/
-    public $intID;
+    public $id;
     
     /**
      * @var $strName Name of the lead.
      */
-    public $strName;
+    public $name;
 
     /**
      * @var DateTime The date the contact was added to SugarCRM
      */
-    public $dtmEntered;
+    public $date_entered;
 
     /**
      * @var DateTime The date/time the record was last modified.
      */
-    public $dtmModified;
+    public $date_modified;
 
     /**
      * @var string The username of the last person to modify the record.
      */
-    public $strModifiedByUsername;
+    public $modified_user_id;
 
     /**
      * @var string The display name of the last user to modify the record.
      */
-    public $strModifiedByDisplayName; 
+    public $modified_by_name; 
 
     /**
      * @var string The username of the person who created the record.
      */
-    public $strCreatedByUsername;
+    public $created_by;
 
     /**
      * @var string The display name of the user who created the record.
      */
-    public $strCreatedByDisplayName; 
+    public $created_by_name; 
 
     /**
      * @var string Description
      */
-    public $strDescription;
+    public $description;
 
     /**
      * @var boolean Indicated if the record has been deleted.
      */
-    public $bolDeleted;
+    public $deleted;
 
     /**
      * @var string The username of the person who the record is assigned to.
      */
-    public $strAssignedToUsername;
+    public $assigned_user_id;
 
     /**
      * @var string The display name of the person who the record is assigned to.
      */
-    public $strAssignedToDisplayName; 
+    public $assigned_user_name; 
 
     /**
      * @var string Salutation
      */
-    public $strSalutation;
+    public $salutation;
 
     /**
      * @var string First Name
      */
-    public $strFirstName;
+    public $first_name;
 
     /**
      * @var string Last Name
      */
-    public $strLastName;
+    public $last_name;
 
     /**
      * @var string Full name
      */
-    public $strFullName;
+    public $full_name;
 
     /**
      * @var string contact's title
      */
-    public $strTitle;
+    public $title;
 
     /**
      * @var string Department
      */
-    public $strDepartment;
+    public $department;
 
     /**
      * @var boolean Do not call this contact
      */
-    public $bolDoNotCall;
+    public $do_not_call;
 
     /**
      * @var string Home phone number
      */
-    public $strHomePhone;
+    public $phone_home;
 
     /**
      * @var string Email address
      */
-    var $strEmail;
+    var $email;
 
     /**
      * @var string Alternative Email address
      */
-    var $strOtherEmail;
+    var $email1;
+
+    /**
+     * @var string Another email address (who has 3!!)
+     */
+    var $email2;
 
     /**
      * @var boolean Invalid email address.
      */
-    var $bolInvalidEmail;
+    var $invalid_email;
 
     /**
      * @var boolean Email opt out
      */
-    var $bolEmailOptOut;
+    var $email_opt_out;
 
     /**
      * @var string Mobile phone number
      */
-    public $strMobilePhone;
+    public $phone_mobile;
 
     /**
      * @var string Work phone number
      */
-    public $strWorkPhone;
+    public $phone_work;
 
     /**
      * @var string Other phone number
      */
-    public $strOtherPhone;
+    public $phone_other;
 
     /**
      * @var string Fax phone number
      */
-    public $strFaxPhone;
+    public $phone_fax;
 
     /**
      * @var string Primary street address.
      */
-    public $strPrimaryStreetAddress;
+    public $primary_address_street;
 
     /**
      * @var string Primary street address line 2.
      */
-    public $strPrimaryStreetAddress2;
+    public $primary_address_street_2;
 
     /**
      * @var string Primary street address line 3.
      */
-    public $strPrimaryStreetAddress3;
+    public $primary_address_street_3;
 
     /**
      * @var string Primary address city.
      */
-    public $strPrimaryCity;
+    public $primary_address_city;
 
     /**
      * @var string Primary address state.
      */
-    public $strPrimaryState;
+    public $primary_address_state;
 
     /**
      * @var string Primary post code.
      */
-    public $strPrimaryPostcode;
+    public $primary_address_postalcode;
 
     /**
      * @var string Primary country.
      */
-    public $strPrimaryCountry;
+    public $primary_address_country;
 
     /**
      * @var string Alt street address.
      */
-    public $strAltStreetAddress;
+    public $alt_address_street;
 
     /**
      * @var string Alt street address line 2.
      */
-    public $strAltStreetAddress2;
+    public $alt_address_street_2;
 
     /**
      * @var string Alt street address line 3.
      */
-    public $strAltStreetAddress3;
+    public $alt_address_street_3;
 
     /**
      * @var string Alt address city.
      */
-    public $strAltCity;
+    public $alt_address_city;
 
     /**
      * @var string Alt address state.
      */
-    public $strAltState;
+    public $alt_address_state;
 
     /**
      * @var string Alt post code.
      */
-    public $strAltPostcode;
+    public $alt_address_postal_code;
 
     /**
      * @var string Alt country.
      */
-    public $strAltCountry;
+    public $alt_address_country;
 
     /**
      * @var string Assistant name
      */
-    public $strAssistantName;
+    public $assistant;
 
     /**
      * @var string Assistant phone
      */
-    public $strAssistantPhone;
+    public $assistant_phone;
 
     /**
      * @var string Lead source
      */
-    public $strLeadSource;
+    public $lead_source;
 
     /**
      * @var string Lead source description.
      */
-    public $strLeadSourceDescription;
+    public $lead_source_description;
 
     /**
-     * @var $strStatus Status of this lead.
+     * @var string $strStatus Status of this lead.
      */
-    public $strStatus;
+    public $status;
 
     /**
-     * @var $strStatusDescription Status of this lead.
+     * @var string $strStatusDescription Status of this lead.
      */
-    public $strStatusDescription;
+    public $status_description;
 
     /**
-     * @var $bolConverted Has the lead been converted
+     * @var boolean $bolConverted Has the lead been converted
      */
-    public $bolConverted;
+    public $converted;
 
     /**
-     * @var $strReferredBy Referred by
+     * @var string $strReferredBy Referred by
      */
-    public $strReferredBy;
+    public $referred_by;
+
+    /**
+     * @var string $reports_to_id The ID of the person this lead reports to.
+     */
+    private $reports_to_id;
+
+    /**
+     * @var string $reports_to_name The name of the person this lead reports to.
+     */
+    private $reports_to_name;
+
+    /**
+     * @var string $account_id ID of the account.
+     */
+    private $account_id;
 
     /**
      * @var string Account ID
      */
-    public $strAccountID;
+    public $account_name;
 
     /**
-     * @var integer Opportunity role ID
+     * @var string $account_description Account description.
      */
-    public $intOpportunityRoleID;
+    private $account_description;
 
     /**
-     * @var string Opportunity role
+     * @var string $campaign_id Campaign ID
      */
-    public $strOpportunityRole;
-
-    /**
-     * @var integer Reports to ID
-     */
-    public $intReportsToID;
-
-    /**
-     * @var string Reports to.
-     */
-    public $strReportsTo;
-
-    /**
-     * @var DateTime Date of birth
-     */
-    public $dtmBirthDate;
-
-    /**
-     * @var integer Campaign ID
-     */
-    public $intCampaignID;
+    public $campaign_id;
 
     /**
      * @var string Campaign Name
      */
-    public $strCampaignName;
+    public $campaign_name;
 
     /**
-     * @var $intContactID The contact ascociated witht his lead.
+     * @var string $contact_id The contact ascociated witht his lead.
      */
-    public $intContactID;
+    public $contact_id;
 
     /**
-     * @var $intOpportunityID ID of the opportunity
+     * @var string $opportunity_id ID of the opportunity
      */
-    public $intOpportunityID;
+    public $opportunity_id;
 
     /**
-     * @var $strOpportunityName The name of the opportunity.
+     * @var string $opportunity_name The name of the opportunity.
      */
-    public $strOpportunityName;
+    public $opportunity_name;
 
     /**
-     * @var $strOpportunityAmount The amount of this opportunity.
+     * @var string $opportunity_amount The amount of this opportunity.
      */
-    private $strOpportunityAmount;
+    private $opportunity_amount;
 } // END class Contact

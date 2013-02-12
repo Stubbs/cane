@@ -11,7 +11,7 @@ use Stubbs\Sugar\Transport;
 class TransportTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Transport::_construct
+     * @covers Stubbs\Sugar\Transport::__construct
      * @expectedException UnexpectedValueException
      * @expectedExceptionMessage You must supply a URL to call.
      */
@@ -20,7 +20,7 @@ class TransportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Transport::_construct
+     * @covers Stubbs\Sugar\Transport::__construct
      * @expectedException UnexpectedValueException
      * @expectedExceptionMessage You must supply a valid Auth token.
      */

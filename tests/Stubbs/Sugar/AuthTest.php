@@ -18,7 +18,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Auth::login
+     * @covers Stubbs\Sugar\Auth::login
      * @expectedException UnexpectedValueException
      * @expectedExceptionMessage You must supply a username, password & URL to login.
      */
@@ -29,7 +29,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Auth::login
+     * @covers Stubbs\Sugar\Auth::login
      * @expectedException UnexpectedValueException
      * @expectedExceptionMessage You must supply a username, password & URL to login.
      */
@@ -40,7 +40,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Auth::login
+     * @covers Stubbs\Sugar\Auth::login
      * @expectedException UnexpectedValueException
      * @expectedExceptionMessage You must supply a username, password & URL to login.
      */
@@ -51,7 +51,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers Auth::login
+     * @covers Stubbs\Sugar\Auth::login
      */
     public function testLoginSuccess() {
         $objMockTransport = $this->getMock('Transport', array('call'));
@@ -71,7 +71,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers Auth::login
+     * @covers Stubbs\Sugar\Auth::login
      * @expectedException Exception
      * @expectedExceptionMessage Invalid username/password.
      */

@@ -280,4 +280,15 @@ class Contact
      * @var string Campaign Name
      */
     public $strCampaignName;
+
+    /**
+     * Returns a JSON string that represents this object.
+     *
+     * @return void
+     * @author 
+     **/
+    public function toJSON()
+    {
+        return json_encode($this);
+    }
 } // END class Contact

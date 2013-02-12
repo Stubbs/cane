@@ -87,5 +87,8 @@ class SugarAPI
      **/
     public function createContact(Contact $objContact)
     {
+        $strJSON = $objContact->getJSON();
+
+print($strJSON);
     }
 } // END class Sugar

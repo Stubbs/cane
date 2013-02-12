@@ -290,7 +290,7 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
         }
 
     /**
-     * @covers SugarAPI::getAvailableModules
+     * @covers Stubbs\Sugar\SugarAPI::getAvailableModules
      */
     public function testGetModuleList() {
         $objAPI = $this->getMockAPI($this->getModuleListJSON());
@@ -301,7 +301,7 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers SugarAPI::getModuleFields
+     * @covers Stubbs\Sugar\SugarAPI::getModuleFields
      */
     public function testGetContactFields() {
         $objAPI = $this->getMockAPI($this->getModuleFieldsJSON());
@@ -312,7 +312,7 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers SugarAPI::getModuleFields
+     * @covers Stubbs\Sugar\SugarAPI::getModuleFields
      * @expectedException UnexpectedValueException
      * @expectedExceptionMessage Unable to find module BadModule
      */
@@ -323,20 +323,20 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers SugarAPI::createContact
+     * @covers Stubbs\Sugar\SugarAPI::createContact
      */
     public function testCreateContactCreated() {
-        $this->markTestIncomplete('Not yet Implemented');
-        $this->objSugarAPI->login('admin', 'letmein');
-
         $objContact = new Contact();
 
         // Simple test, only the last name is required to make a valid contact.
         $objContact->strFirstName = 'Stuart';
         $objContact->strLastName = 'Grimshaw';
-
-        $this->objSugarAPI->createContact($objContact);
-
     }
-    
+
+    /**
+     * @covers Stubbs\Sugar\SugarAPI::createContact
+     */
+    public function testCreateLead() {
+      
+    }
 }
