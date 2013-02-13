@@ -6,6 +6,8 @@
 
 namespace Stubbs\Sugar;
 
+use Stubbs\Sugar\Entry;
+
 /**
  * Represents a SugarCRM Lead.
  *
@@ -14,7 +16,7 @@ namespace Stubbs\Sugar;
  * @package default
  * @author 
  **/
-class Lead
+class Lead extends Entry
 {
     /**
      * @var integer Unique identifier for this contact.
