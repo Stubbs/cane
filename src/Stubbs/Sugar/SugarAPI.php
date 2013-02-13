@@ -79,33 +79,21 @@ class SugarAPI
     }
 
     /**
-     * Call the set entry method on the API.
+     * Create a new Entry in SugarCRM.
      *
-     * @return string The ID of the entry that was written.
+     * @return String ID
      * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
      **/
-    protected function setEntry($arrCallParameters)
+    public function setEntry(Entry $objEntry)
     {
+        $arrCallParameters = array(
+                "module" => $objEntry->getModule(),
+                "name_value_list" => $objEntry->toArray()
+            );
+
         $arrResult = $this->objTransport->call("set_entry", $arrCallParameters);
 
         return $arrResult['id'];
-    }
 
-    /**
-     * Create a new Lead.
-     *
-     * @return bool
-     * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
-     **/
-    public function createLead(Lead $objLead)
-    {
-        $arrCallParameters = array(
-                "module" => "Leads",
-                "name_value_list" => $objLead->toArray()
-            );
-
-        $strID = $this->setEntry($arrCallParameters);
-
-        return $strID;
     }
 } // END class Sugar

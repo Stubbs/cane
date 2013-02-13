@@ -16,6 +16,17 @@ class Entry {
     private $objPayload;
 
     /**
+     * Returns the module name for this entry type.
+     *
+     * @return String
+     * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
+     **/
+    public function getModule()
+    {
+        return $this::ENTRY_MODULE;
+    }
+
+    /**
      * Unserializes a JSON message into a local store.
      *
      * @return void

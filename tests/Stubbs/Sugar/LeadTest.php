@@ -20,5 +20,15 @@ class LeadTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array("first_name" => "Stuart", "last_name" => "Grimshaw", "full_name" => "Stuart Grimshaw"),
             $objLead->toArray());
     }
+ 
+    /**
+     * @covers \Stubbs\Sugar\Lead::getModule
+     */
+    public function testGetModule() {
+        $objLead = new Lead('{"first_name": "Stuart", "last_name": "Grimshaw", "full_name": "Stuart Grimshaw"}');
+
+        $this->assertEquals($objLead->getModule(), 'Leads');
+    }
     
+
 }

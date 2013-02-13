@@ -18,4 +18,9 @@ use Stubbs\Sugar\Entry;
  *
  * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
  **/
-class Lead extends Entry {};
+class Lead extends Entry {
+    /**
+     * The module to send this entry to.
+     **/
+    const ENTRY_MODULE = 'Leads';
+};

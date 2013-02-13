@@ -356,7 +356,7 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
 
         $objAPI = new SugarAPI($this->objTransport);
 
-        $this->assertEquals($objAPI->createLead($objLead), "123xyz");
+        $this->assertEquals($objAPI->setEntry($objLead), "123xyz");
     }
 
 }
