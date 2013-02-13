@@ -352,11 +352,7 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
                 )
                 ->will($this->returnValue(array("id" => "123xyz")));
 
-        $objLead = new Lead();
-
-        $objLead->first_name = "Stuart";
-        $objLead->last_name = "Grimshaw";
-        $objLead->full_name = "Stuart Grimshaw";
+        $objLead = new Lead('{"first_name": "Stuart", "last_name": "Grimshaw", "full_name": "Stuart Grimshaw"}');
 
         $objAPI = new SugarAPI($this->objTransport);
 
