@@ -35,7 +35,7 @@ class Auth {
     public function login($strUsername, $strPassword, $objTransport)
     {
         if($strUsername == null || $strPassword == null || $objTransport == null) {
-            throw new UnexpectedValueException("You must supply a username, password & URL to login.");
+            throw new UnexpectedValueException("You must supply a username, password & Transport to login.");
         }
 
         $arrLoginParameters = array(

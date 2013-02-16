@@ -9,9 +9,7 @@
 namespace Stubbs\Sugar;
 
 use Stubbs\Sugar\Transport;
-
 use UnexpectedValueException;
-
 
 /**
  * Used to send the calls to the SugarAPI
@@ -33,14 +31,10 @@ class Transport {
      * @return void
      * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
      **/
-    public function __construct($strURL, $objAuth)
+    public function __construct($strURL, $objAuth = null)
     {
         if($strURL == null) {
             throw new UnexpectedValueException("You must supply a URL to call.");
-        }
-
-        if($objAuth == null) {
-            throw new UnexpectedValueException("You must supply a valid Auth token.");
         }
 
         $this->strURL = $strURL . "/service/v4/rest.php";
@@ -69,7 +63,9 @@ class Transport {
         curl_setopt($curl_request, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl_request, CURLOPT_FOLLOWLOCATION, 0);
      
-        $arrParameters['session'] = $this->objAuth->getSessionID();
+        if($this->objAuth !== null) {
+            $arrParameters['session'] = $this->objAuth->getSessionID();
+        }
 
         $jsonEncodedData = json_encode($arrParameters);
 
@@ -89,6 +85,7 @@ class Transport {
         $objResult = json_decode($result[1]);
 
         if (isset($objResult->name) && isset($objResult->number)) {
+            error_log("Cannout log in to API: " . $objResult->name);
             throw new Transport\Exception($objResult->name, $objResult->number);
         }
 

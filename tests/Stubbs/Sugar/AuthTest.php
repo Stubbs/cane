@@ -20,7 +20,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Stubbs\Sugar\Auth::login
      * @expectedException UnexpectedValueException
-     * @expectedExceptionMessage You must supply a username, password & URL to login.
+     * @expectedExceptionMessage You must supply a username, password & Transport to login.
      */
     public function testNullPasswordThrowsException() {
         $objAuth = new Auth();
@@ -31,7 +31,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Stubbs\Sugar\Auth::login
      * @expectedException UnexpectedValueException
-     * @expectedExceptionMessage You must supply a username, password & URL to login.
+     * @expectedExceptionMessage You must supply a username, password & Transport to login.
      */
     public function testNullURLThrowsException() {
         $objAuth = new Auth();
@@ -42,7 +42,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Stubbs\Sugar\Auth::login
      * @expectedException UnexpectedValueException
-     * @expectedExceptionMessage You must supply a username, password & URL to login.
+     * @expectedExceptionMessage You must supply a username, password & Transport to login.
      */
     public function testNullUsernameThrowsException() {
         $objAuth = new Auth();

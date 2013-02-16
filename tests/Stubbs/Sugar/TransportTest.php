@@ -19,13 +19,4 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         $objTransport = new Transport(null, null);
     }
 
-    /**
-     * @covers Stubbs\Sugar\Transport::__construct
-     * @expectedException UnexpectedValueException
-     * @expectedExceptionMessage You must supply a valid Auth token.
-     */
-    public function testNullAuthTokenThrowsException() {
-        $objTransport = new Transport('http://www.example.com', null);
-    }
-    
 }

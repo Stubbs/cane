@@ -75,6 +75,8 @@ class SugarAPI
             throw new UnexpectedValueException("Unable to find module " . $strModuleName);
         }
 
+        //@ToDo Check for a failed login.
+
         return $objResponse->module_fields;
     }
 
