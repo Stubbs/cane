@@ -56,9 +56,9 @@ class Transport {
      **/
     protected function curlExec($objCurlRequest, $arrPost)
     {
-        curl_setopt($curl_request, CURLOPT_POSTFIELDS, $arrPost);
-        $result = curl_exec($curl_request);
-        curl_close($curl_request);
+        curl_setopt($objCurlRequest, CURLOPT_POSTFIELDS, $arrPost);
+        $result = curl_exec($objCurlRequest);
+        curl_close($objCurlRequest);
         
         $result = explode("\r\n\r\n", $result, 2);
 
