@@ -324,7 +324,7 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers Stubbs\Sugar\SugarAPI::createContact
+     * @covers Stubbs\Sugar\SugarAPI::setEntry
      */
     public function testCreateContactCallsTransport() {
         $this->markTestIncomplete('Not yet Implemented');
@@ -337,7 +337,6 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers Stubbs\Sugar\SugarAPI::setEntry
-     * @covers Stubbs\Sugar\SugarAPI::createLead
      */
     public function testSetEntryCallsTransport() {
         $this->objTransport->expects($this->once())

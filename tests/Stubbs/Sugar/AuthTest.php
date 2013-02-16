@@ -88,6 +88,16 @@ class AuthTest extends \PHPUnit_Framework_TestCase
 
         $this->assertNull($objAuth->getSessionID());
     }
+
+    /**
+     * @covers Stubbs\Sugar\Auth::getSessionID
+     */
+    public function testGetSessionIsInitiallyNull() {
+        $objAuth = new Auth();
+
+        $this->assertNull($objAuth->getSessionID());
+    }
+    
     
 
 }
