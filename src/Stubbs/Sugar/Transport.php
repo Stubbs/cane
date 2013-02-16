@@ -24,6 +24,13 @@ class Transport {
     private $strURL;
 
     /**
+     * The Authentication token for this transport.
+     *
+     * @var Stubbs\Sugar\Auth
+     **/
+    private $objAuth;
+
+    /**
      * Create a new instance of the Transport class.
      *
      * @param String $strURL The URL endpoint for the API.
@@ -42,6 +49,23 @@ class Transport {
     }
 
     /**
+     * undocumented function
+     *
+     * @return void
+     * @author 
+     **/
+    protected function curlExec($objCurlRequest, $arrPost)
+    {
+        curl_setopt($curl_request, CURLOPT_POSTFIELDS, $arrPost);
+        $result = curl_exec($curl_request);
+        curl_close($curl_request);
+        
+        $result = explode("\r\n\r\n", $result, 2);
+
+        return $result[1];
+    }
+
+    /**
      * Calls the API for the given method
      *
      * @todo  The way it figures out which element of the response array to use is very brittle.
@@ -50,7 +74,6 @@ class Transport {
      * @return Object
      * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
      **/
-
     public function call($strMethod, $arrParameters)
     {
         $curl_request = curl_init();
@@ -66,7 +89,7 @@ class Transport {
         if($this->objAuth !== null) {
             $arrParameters = array_merge(array("session" => $this->objAuth->getSessionID()), $arrParameters);
         }
-     
+
         $jsonEncodedData = json_encode($arrParameters);
 
         $arrPost = array(
@@ -76,13 +99,9 @@ class Transport {
              "rest_data" => $jsonEncodedData
         );
 
-        curl_setopt($curl_request, CURLOPT_POSTFIELDS, $arrPost);
-        $result = curl_exec($curl_request);
-        curl_close($curl_request);
-     
-        $result = explode("\r\n\r\n", $result, 2);
+        $result = $this->curlExec($curl_request, $arrPost);
 
-        $objResult = json_decode($result[1]);
+        $objResult = json_decode($result);
 
         if (isset($objResult->name) && isset($objResult->number)) {
             throw new Transport\Exception($objResult->name, $objResult->number);
