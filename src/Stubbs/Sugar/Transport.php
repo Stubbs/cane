@@ -64,9 +64,9 @@ class Transport {
         curl_setopt($curl_request, CURLOPT_FOLLOWLOCATION, 0);
      
         if($this->objAuth !== null) {
-            $arrParameters['session'] = $this->objAuth->getSessionID();
+            $arrParameters = array_merge(array("session" => $this->objAuth->getSessionID()), $arrParameters);
         }
-
+     
         $jsonEncodedData = json_encode($arrParameters);
 
         $arrPost = array(
@@ -85,7 +85,6 @@ class Transport {
         $objResult = json_decode($result[1]);
 
         if (isset($objResult->name) && isset($objResult->number)) {
-            error_log("Cannout log in to API: " . $objResult->name);
             throw new Transport\Exception($objResult->name, $objResult->number);
         }
 
