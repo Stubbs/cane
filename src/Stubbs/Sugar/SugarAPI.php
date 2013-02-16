@@ -95,7 +95,7 @@ class SugarAPI
 
         $arrResult = $this->objTransport->call("set_entry", $arrCallParameters);
 
-        return $arrResult['id'];
+        return $arrResult->id;
 
     }
 } // END class Sugar

@@ -349,7 +349,7 @@ class SugarApiTest extends \PHPUnit_Framework_TestCase
                         )
                     )
                 )
-                ->will($this->returnValue(array("id" => "123xyz")));
+                ->will($this->returnValue(json_decode('{"id": "123xyz"}')));
 
         $objLead = new Lead('{"first_name": "Stuart", "last_name": "Grimshaw", "full_name": "Stuart Grimshaw"}');
 
