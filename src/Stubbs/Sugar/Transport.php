@@ -51,7 +51,7 @@ class Transport {
      * @author Stuart Grimshaw <stuart.grimshaw@gmail.com>
      **/
 
-    private function call($strMethod, $arrParameters)
+    public function call($strMethod, $arrParameters)
     {
         $curl_request = curl_init();
  
